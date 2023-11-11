@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bulk Downloader</title>
+</head>
+<body>
+<script>
+    filesList = JSON.parse('{{ filesList|tojson|safe }}');
+
+    filesList.forEach(function(item) {
+        var link = document.createElement('a');
+        link.href = '/' + item;
+        link.download = item;
+        link.click();
+    });
+</script>
+</body>
+</html>
